@@ -39,7 +39,7 @@ public class ZSNPageObjectData {
     }
 
     public String getDateOfBirth() {
-        dateOfBirth = day + " " + monthStr[month + 1] + "," + year;
+        dateOfBirth = day + " " + monthStr[month-1] + "," + year;
         return dateOfBirth;
     }
 
