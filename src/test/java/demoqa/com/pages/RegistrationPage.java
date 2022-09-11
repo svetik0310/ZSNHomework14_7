@@ -10,11 +10,13 @@ import java.io.File;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static io.qameta.allure.Allure.attachment;
 
 public class RegistrationPage {
 
     public RegistrationPage openPage() {
         open("/automation-practice-form");
+        attachment("Source", webdriver().driver().source());
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");

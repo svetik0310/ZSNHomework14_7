@@ -1,26 +1,24 @@
 package demoqa.com.test;
 
-import com.codeborne.selenide.Configuration;
 import demoqa.com.data.ZSNPageObjectData;
 import demoqa.com.pages.RegistrationPage;
-import org.junit.jupiter.api.BeforeAll;
+import io.qameta.allure.Feature;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class ZSNHomeworkPageObjectTest {
-    @BeforeAll
-    static void setup() {
-        Configuration.browserSize = "1500x840";
-        Configuration.browserPosition = "0x0";
-        Configuration.baseUrl = "https://demoqa.com";
-    }
+import static io.qameta.allure.Allure.step;
 
+public class ZSNHomeworkPageObjectTest extends BaseTest {
+    @Feature("Registration form test")
+    @DisplayName("Fill out the registration form")
     @Test
     void fillAutomationPracticeForm() {
         ZSNPageObjectData testPerson = new ZSNPageObjectData();
-        new RegistrationPage()
+        RegistrationPage registrationPage = new RegistrationPage();
+        step("Open page, fill the form, submit", () -> registrationPage
                 .openPage()
                 .setDataToForm(testPerson)
-                .clickSubmitButton()
-                .assertData(testPerson);
+                .clickSubmitButton());
+        step("Assert data in registration form", () -> registrationPage.assertData(testPerson));
     }
 }
