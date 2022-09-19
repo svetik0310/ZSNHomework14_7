@@ -24,9 +24,10 @@ public class BaseTest {
         Configuration.browserCapabilities = capabilities;
         Configuration.baseUrl = "https://demoqa.com";
        // Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        //https://user1:1234@selenoid.autotests.cloud/wd/hub/
 
-        if (System.getProperty("selenide.remote") != null) {
-            Configuration.remote = System.getProperty("selenide.remote");
+        if (System.getProperty("remote") != null) {
+            Configuration.remote = System.getProperty("remote");
         }
     }
 
