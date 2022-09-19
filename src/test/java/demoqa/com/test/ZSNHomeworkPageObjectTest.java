@@ -4,6 +4,7 @@ import demoqa.com.data.ZSNPageObjectData;
 import demoqa.com.pages.RegistrationPage;
 import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
@@ -12,6 +13,7 @@ public class ZSNHomeworkPageObjectTest extends BaseTest {
     @Feature("Registration form test")
     @DisplayName("Fill out the registration form")
     @Test
+    @Tag("properties")
     void fillAutomationPracticeForm() {
         ZSNPageObjectData testPerson = new ZSNPageObjectData();
         RegistrationPage registrationPage = new RegistrationPage();
