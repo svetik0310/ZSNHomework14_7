@@ -1,0 +1,16 @@
+{
+  "base": {
+    "project": "ZSNHomeworkPageObjectTest",
+    "environment": "remoteJenkins",
+    "comment": "bot test",
+    "reportLink": "",
+    "language": "en",
+    "allureFolder": "build/reports/allure-report/allureReport",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "5465907620:AAEFVgXA2BPEUK6FuSferv_Dt5AEtpJUbo8",
+    "chat": "-1001788833072",
+    "replyTo": ""
+  }
+}
